@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BahsisHesaplayici.MainPage"
+             Title="Bahşiş Hesaplayıcı">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="15">
+
+            <Label Text="Bahşiş Hesaplayıcı" FontSize="28"
+                   FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <Label Text="Hesap Tutarı (₺):" />
+            <Entry x:Name="TutarEntry" Placeholder="Örn: 450" Keyboard="Numeric" />
+
+            <Label x:Name="YuzdeLabel" Text="Bahşiş Oranı: %10" />
+            <Slider x:Name="YuzdeSlider" Minimum="0" Maximum="30" Value="10"
+                    ValueChanged="OnYuzdeDegisti" />
+
+            <Label x:Name="KisiLabel" Text="Kişi Sayısı: 1" />
+            <Stepper x:Name="KisiStepper" Minimum="1" Maximum="20" Increment="1"
+                     Value="1" ValueChanged="OnKisiDegisti" />
+
+            <Button Text="Hesapla" Clicked="OnHesaplaClicked" />
+            <Button Text="Temizle" Clicked="OnTemizleClicked" BackgroundColor="Gray" />
+
+            <Label x:Name="SonucLabel" FontSize="18" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
